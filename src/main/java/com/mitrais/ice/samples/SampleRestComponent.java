@@ -19,7 +19,7 @@ public class SampleRestComponent {
 	@Path ("greet/{name}/{age}")
 	@Produces ("text/plain")
 	public String greet(@PathParam("name") String name, @PathParam ("age") String age){			
-		log.info("name :" + name +", age:" + age);
+		log.debug("name :" + name +", age:" + age);
 		MuleThreadLocalHolder.remove(); // to avoid memory leak due unclosed thread
 		return "pret, " + name +", age " + age;
 	}
